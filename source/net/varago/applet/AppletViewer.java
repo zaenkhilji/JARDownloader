@@ -88,7 +88,6 @@ public class AppletViewer {
 	private boolean checkAll() {
 		double version = Double.parseDouble(System.getProperty("java.version").substring(0, 3));
 		if (version < 1.6) {
-			this.updateMessage("Your Java version is outdated: " + version);
 			JOptionPane.showMessageDialog(null,
 					"<html>You have an oudated version of Java: " + version
 							+ " - please update your Java at <a href='http://google.com'>www.java.com/download</a>.</html>",
