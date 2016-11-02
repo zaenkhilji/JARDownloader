@@ -40,6 +40,11 @@ public class Settings {
 	/** The Constant JAVA_HOME. */
 	public static final File JAVA_HOME = new File(System.getProperty("java.home") + File.separator + "bin");
 
+	/** The Constant DATA. */
+	public static final String DATA = "./properties.json";
+
+	public static String SECRET = null;
+
 	/**
 	 * Check configurtion.
 	 *

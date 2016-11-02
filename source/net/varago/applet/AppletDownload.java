@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.Observable;
 
 import net.varago.Settings;
-import net.varago.Updater;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -29,7 +28,7 @@ public class AppletDownload extends Observable implements Runnable {
 	private final AppletViewer appletViewer;
 
 	/** The updater. */
-	private final Updater updater;
+	private final AppletUpdater updater;
 
 	/** The Constant MAX_BUFFER_SIZE. */
 	private static final int MAX_BUFFER_SIZE = 1024;
@@ -50,7 +49,7 @@ public class AppletDownload extends Observable implements Runnable {
 	 * @param appletViewer            the applet viewer
 	 * @param updater the updater
 	 */
-	public AppletDownload(URL url, AppletViewer appletViewer, Updater updater) {
+	public AppletDownload(URL url, AppletViewer appletViewer, AppletUpdater updater) {
 		this.url = url;
 		this.appletViewer = appletViewer;
 		this.updater = updater;

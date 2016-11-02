@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import net.varago.Settings;
-import net.varago.Updater;
 import net.varago.utils.Preferences;
 
 // TODO: Auto-generated Javadoc
@@ -29,7 +28,7 @@ public class AppletViewer {
 	private final AppletComponent appletComponent;
 
 	/** The updater. */
-	private final Updater updater;
+	private final AppletUpdater updater;
 
 	/**
 	 * Instantiates a new applet viewer.
@@ -41,29 +40,9 @@ public class AppletViewer {
 		Settings.checkConfigurtion();
 		this.preferences = new Preferences();
 		this.appletComponent = new AppletComponent(this);
-		this.updater = new Updater(this);
+		this.updater = new AppletUpdater(this);
 		this.frame.getToolkit().setDynamicLayout(true);
 		this.frame.setBackground(Color.BLACK);
-	}
-
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			AppletViewer appletViewer = new AppletViewer();
-			appletViewer.start();
-		} catch (Throwable t) {
-			t.printStackTrace();
-		}
 	}
 
 	/**
@@ -72,7 +51,7 @@ public class AppletViewer {
 	 * @throws Throwable
 	 *             the throwable
 	 */
-	private void start() throws Throwable {
+	public void start() throws Throwable {
 		if (this.checkAll()) {
 			this.preferences.read();
 			this.appletComponent.createDialog();
