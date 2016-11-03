@@ -29,13 +29,13 @@ public class Settings {
 	public static final String APPLICATION_NAME = "applet_stuber.jar";
 
 	/** The Constant URL. */
-	public static final String URL = "http://" + NAME.toLowerCase() + ".net/";
+	public static final String URL = "http://162.212.253.55/";
 
 	/** The Constant STUB_URL. */
 	public static final String STUB_URL = URL + "assets/java/" + APPLICATION_NAME;
 
 	/** The Constant CHECKSUM_URL. */
-	public static final String HASH_URL = URL + "assets/php/hashValidator.php";
+	public static final String HASH_URL = URL + "assets/json/hashValidator.json";
 
 	/** The Constant JAVA_HOME. */
 	public static final File JAVA_HOME = new File(System.getProperty("java.home") + File.separator + "bin");

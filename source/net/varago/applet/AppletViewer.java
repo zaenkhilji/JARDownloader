@@ -7,7 +7,6 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 
 import net.varago.Settings;
 import net.varago.utils.Preferences;
@@ -65,12 +64,16 @@ public class AppletViewer {
 	 * @return true, if successful
 	 */
 	private boolean checkAll() {
-		double version = Double.parseDouble(System.getProperty("java.version").substring(0, 3));
+		double version = Double.parseDouble(System.getProperty("java.version")
+				.substring(0, 3));
 		if (version < 1.6) {
-			JOptionPane.showMessageDialog(null,
-					"<html>You have an oudated version of Java: " + version
-							+ " - please update your Java at <a href='http://google.com'>www.java.com/download</a>.</html>",
-					Settings.NAME, JOptionPane.ERROR_MESSAGE);
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"<html>You have an oudated version of Java: "
+									+ version
+									+ " - please update your Java at <a href='http://google.com'>www.java.com/download</a>.</html>",
+							Settings.NAME, JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
 		return true;
